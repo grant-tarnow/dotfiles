@@ -32,6 +32,7 @@ set showtabline=2
 
 set so=7
 
+set termguicolors
 colorscheme desert
 
 " Always show the status line
