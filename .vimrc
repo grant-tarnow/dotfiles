@@ -34,13 +34,13 @@ set showtabline=2
 set so=7
 
 set termguicolors
-colorscheme desert
+colorscheme habamax
 
 " Always show the status line
 set laststatus=2
 
 " Format the status line
-set statusline=\ %F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+set statusline=\ %F%m%r%h\ %w\ Line:\ %l\ \ Column:\ %c
 
 " REMAPPINGS
 
