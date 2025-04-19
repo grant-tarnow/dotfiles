@@ -33,8 +33,10 @@ set showtabline=2
 
 set so=7
 
-set termguicolors
-colorscheme habamax
+if !has('nvim')
+	set termguicolors
+	colorscheme habamax
+endif
 
 " Always show the status line
 set laststatus=2
