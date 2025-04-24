@@ -1,10 +1,7 @@
+-- most remappings are done in ~/.vimrc to make sure same remappings if just using vim
 vim.cmd("source ~/.vimrc")
 
 require("config.lazy")
 
--- vim.lsp.enable('hls')
-
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-
+vim.lsp.enable('hls')
 
