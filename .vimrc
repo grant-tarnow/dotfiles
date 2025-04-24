@@ -67,6 +67,9 @@ nnoremap <A-l> <C-w>l
 " escape exits terminal-mode
 tnoremap <Esc> <C-\><C-n>
 
+" <Leader>r sends current paragraph/block to terminal in split to the left
+nnoremap <Leader>r yip<C-w>lpi<CR><C-\><C-n><C-w>h
+
 " pressing <Leader>b lists buffers. Press a number and enter switches to that
 " buffer. Default leader is backslash.
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
