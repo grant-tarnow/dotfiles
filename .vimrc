@@ -67,8 +67,17 @@ nnoremap <A-l> <C-w>l
 " escape exits terminal-mode
 tnoremap <Esc> <C-\><C-n>
 
-" <Leader>r sends current paragraph/block to terminal in split to the left
+" open a terminal in a right split
+nnoremap <Leader>% <Cmd>vs<CR><Cmd>term<CR>
+
+" <Leader>r sends current paragraph/block/selection to terminal in split to the right
 nnoremap <Leader>r yip<C-w>lpi<CR><C-\><C-n><C-w>h
+vnoremap <Leader>r y<C-w>lpi<CR><C-\><C-n><C-w>h
+
+" but if it's a python file, hit enter twice b/c the repl expects that on
+" multi-line blocks
+autocmd BufEnter *.py nnoremap <buffer> <Leader>r yip<C-w>lpi<CR><CR><C-\><C-n><C-w>h
+autocmd BufEnter *.py vnoremap <buffer> <Leader>r y<C-w>lpi<CR><CR><C-\><C-n><C-w>h
 
 " pressing <Leader>b lists buffers. Press a number and enter switches to that
 " buffer. Default leader is backslash.
