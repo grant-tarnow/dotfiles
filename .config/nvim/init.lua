@@ -2,6 +2,3 @@
 vim.cmd("source ~/.vimrc")
 
 require("config.lazy")
-
-vim.lsp.enable('hls')
-
