@@ -52,7 +52,7 @@ set statusline=\ %F%m%r%h\ %w\ Line:\ %l\ \ Col:\ %c
 let mapleader = " "
 
 " autocomplete curly braces
-inoremap { {<CR>}<Esc>ka
+inoremap { {<CR>}<Esc>kA
 
 " escape exits terminal-mode
 tnoremap <Esc> <C-\><C-n>
