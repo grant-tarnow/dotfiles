@@ -1,9 +1,14 @@
-set clipboard=unnamedplus
+colorscheme habamax
 
+" set clipboard=unnamedplus
 syntax on
 
 set number
 set relativenumber
+
+" turn on highlighting for current line in insert mode
+:autocmd InsertEnter * set cursorline
+:autocmd InsertLeave * set nocursorline
 
 set hlsearch
 set ignorecase
@@ -27,57 +32,33 @@ set splitbelow
 
 set ruler
 set showcmd
-set wildmode=list:longest
+set wildmenu
+set wildmode=longest:full
+set wildoptions=pum
 
-set showtabline=2
+" set showtabline=2
 
 set so=7
-
-if !has('nvim')
-	set termguicolors
-	colorscheme habamax
-endif
 
 " Always show the status line
 set laststatus=2
 
 " Format the status line
-set statusline=\ %F%m%r%h\ %w\ Line:\ %l\ \ Column:\ %c
-
+set statusline=\ %F%m%r%h\ %w\ Line:\ %l\ \ Col:\ %c
 
 " ===== REMAPPINGS =====
 
 " set <Leader> to space
 let mapleader = " "
 
-" navigate windows using Alt from any mode
-tnoremap <A-h> <C-\><C-N><C-w>h
-tnoremap <A-j> <C-\><C-N><C-w>j
-tnoremap <A-k> <C-\><C-N><C-w>k
-tnoremap <A-l> <C-\><C-N><C-w>l
-inoremap <A-h> <C-\><C-N><C-w>h
-inoremap <A-j> <C-\><C-N><C-w>j
-inoremap <A-k> <C-\><C-N><C-w>k
-inoremap <A-l> <C-\><C-N><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+" autocomplete curly braces
+inoremap { {<CR>}<Esc>ka
 
 " escape exits terminal-mode
 tnoremap <Esc> <C-\><C-n>
 
 " open a terminal in a right split
-nnoremap <Leader>% <Cmd>vs<CR><Cmd>term<CR>
-
-" <Leader>r sends current paragraph/block/selection to terminal in split to the right
-nnoremap <Leader>r yip<C-w>lpi<CR><C-\><C-n><C-w>h
-vnoremap <Leader>r y<C-w>lpi<CR><C-\><C-n><C-w>h
-
-" but if it's a python file, hit enter twice b/c the repl expects that on
-" multi-line blocks
-autocmd BufEnter *.py nnoremap <buffer> <Leader>r yip<C-w>lpi<CR><CR><C-\><C-n><C-w>h
-autocmd BufEnter *.py vnoremap <buffer> <Leader>r y<C-w>lpi<CR><CR><C-\><C-n><C-w>h
+nnoremap <Leader>% <Cmd>vertical terminal<CR>
 
 " pressing <Leader>b lists buffers. Press a number and enter switches to that
 " buffer. Default leader is backslash.
