@@ -1,6 +1,8 @@
 colorscheme habamax
 
 " set clipboard=unnamedplus
+set mouse=a
+
 syntax on
 
 set number
@@ -51,8 +53,8 @@ set statusline=\ %F%m%r%h\ %w\ Line:\ %l\ \ Col:\ %c
 " set <Leader> to space
 let mapleader = " "
 
-" autocomplete curly braces
-inoremap { {<CR>}<Esc>kA
+" autocomplete curly braces for function bodies
+inoremap {<CR> {<CR>}<Esc>O
 
 " escape exits terminal-mode
 tnoremap <Esc> <C-\><C-n>
