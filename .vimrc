@@ -1,4 +1,6 @@
+" habamax then retrobox to make background dark
 colorscheme habamax
+colorscheme retrobox
 
 " set clipboard=unnamedplus
 set mouse=a
