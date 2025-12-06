@@ -54,11 +54,6 @@ set statusline=\ %F%m%r%h\ %w\ Line:\ %l\ \ Col:\ %c
 " set <Leader> to space
 let mapleader = " "
 
-" use jk to come out of insert or visual mode
-inoremap jk <C-c>
-vnoremap jk <C-c>
-
-" autocomplete curly braces for function bodies
 inoremap {<CR> {<CR>}<Esc>O
 
 " escape exits terminal-mode
