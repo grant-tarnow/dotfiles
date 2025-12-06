@@ -22,7 +22,6 @@ set incsearch
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set softtabstop=4
 
 set linebreak
 set breakindent
@@ -55,6 +54,10 @@ set statusline=\ %F%m%r%h\ %w\ Line:\ %l\ \ Col:\ %c
 " set <Leader> to space
 let mapleader = " "
 
+" use jk to come out of insert or visual mode
+inoremap jk <C-c>
+vnoremap jk <C-c>
+
 " autocomplete curly braces for function bodies
 inoremap {<CR> {<CR>}<Esc>O
 
@@ -69,5 +72,36 @@ nnoremap <Leader>% <Cmd>vertical terminal<CR>
 nnoremap <Leader>b :buffers<CR>:buffer<Space>
 " pressing <Leader>s switches to the previously open buffer
 nnoremap <Leader>s :buffer<Space>#<CR>
+
 " pressing <Leader>e opens netrw
 nnoremap <Leader>e :Ex<CR>
+
+" toggle list characters
+set listchars=tab:>-,trail:-,eol:$
+nnoremap <Leader>l <Cmd>set list!<CR>
+
+" switch tab setup
+nnoremap <Leader>ts :call SwitchTabSettings()<CR>
+function SwitchTabSettings()
+    if &tabstop ==# 8
+        set tabstop=4
+        set shiftwidth=4
+        set expandtab
+        set breakindentopt=shift:2
+        setlocal tabstop=4
+        setlocal shiftwidth=4
+        setlocal expandtab
+        setlocal breakindentopt=shift:2
+        echo 'Set to expanded 4-space tabs'
+    else
+        set tabstop=8
+        set shiftwidth=8
+        set noexpandtab
+        set breakindentopt=shift:4
+        setlocal tabstop=8
+        setlocal shiftwidth=8
+        setlocal noexpandtab
+        setlocal breakindentopt=shift:4
+        echo 'Set to true 8-space tabs'
+    endif
+endfunction
