@@ -51,9 +51,16 @@ set statusline=\ %F%m%r%h\ %w\ Line:\ %l\ \ Col:\ %c
 
 " ===== REMAPPINGS =====
 
+" get out of insert mode by pressing kj
+inoremap kj <Esc>
+
 " set <Leader> to space
 let mapleader = " "
 
+" reload vimrc
+nnoremap <Leader>v <Cmd>source ~/.vimrc<CR>
+
+" add closing curly brace when creating a block
 inoremap {<CR> {<CR>}<Esc>O
 
 " escape exits terminal-mode
