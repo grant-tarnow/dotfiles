@@ -75,6 +75,13 @@ nnoremap <Leader>e :Ex<CR>
 set listchars=tab:>-,trail:-,eol:$
 nnoremap <Leader>l <Cmd>set list!<CR>
 
+" For lisp -- send current paragraph to terminal
+" in a right split
+nnoremap <Leader>r yip<C-w>l<C-w>""<C-w>h
+" For lisp -- send current selection to terminal
+" in a right split
+vnoremap <Leader>r y<C-w>l<C-w>""<C-w>h
+
 " switch tab setup
 nnoremap <Leader>ts :call SwitchTabSettings()<CR>
 function SwitchTabSettings()
