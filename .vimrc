@@ -49,6 +49,9 @@ set laststatus=2
 " Format the status line
 set statusline=\ %F%m%r%h\ %w\ Line:\ %l\ \ Col:\ %c
 
+set printoptions=paper:letter,duplex:long,syntax:off,right:10pc
+set printheader=%<%=Page\ %N
+
 " ===== REMAPPINGS =====
 
 " get out of insert mode by pressing kj
